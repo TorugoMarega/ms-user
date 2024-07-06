@@ -4,6 +4,8 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 /
+### Config Infra Local ###
+/src/main/resources/application-loc.properties
 
 ### STS ###
 .apt_generated
