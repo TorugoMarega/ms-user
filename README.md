@@ -5,7 +5,7 @@ Micro Serviço de cadastro de usuários com integração de envio de emails
 Esse serviço está ligado ao serviço de envio de emails, quando um usuário é cadastrado, é enviado um email para endereço passado no cadastro do usuário
 Para o funcionamento completo clone o repositório do [**micro serviço de envio de email**](https://github.com/TorugoMarega/ms-email)
 
-O cadastro é feito via POST no endpont "user", os dados do cliente serão salvos no banco de dados e um email será enviado através do Micro Serviço de Email, a solicitação do envio do email será mantida no banco de dados próprio do serviço de email, assim é possível recuperar se o email foi enviado com sucesso ou se houve erro durante o envio.
+O cadastro é feito via POST no endpoint "user", os dados do cliente serão salvos no banco de dados e um email será enviado através do Micro Serviço de Email, a solicitação do envio do email será mantida no banco de dados próprio do serviço de email, assim é possível recuperar se o email foi enviado com sucesso ou se houve erro durante o envio.
 
 
 
