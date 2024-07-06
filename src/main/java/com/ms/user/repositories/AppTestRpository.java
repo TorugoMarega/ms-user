@@ -1,6 +1,6 @@
 package com.ms.user.repositories;
 
-import com.ms.user.model.AppTest;
+import com.ms.user.models.AppTest;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
