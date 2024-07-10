@@ -1,11 +1,9 @@
 package com.ms.user.controllers;
 
 import com.ms.user.dto.UserRecordDto;
-import com.ms.user.models.UserModel;
 import com.ms.user.services.UserService;
 import jakarta.validation.Valid;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,13 +21,20 @@ public class UserController {
     }
 
     @PostMapping("/users")
-    public ResponseEntity<UserModel> saveUser(@RequestBody @Valid UserRecordDto userRecordDto){
-        var userModel = new UserModel();
-        log.info("Copiando DTO para Entidade");
-        BeanUtils.copyProperties(userRecordDto, userModel);
-        log.info("Chamando serviço de salvar usuário!");
-        return ResponseEntity.status(HttpStatus.CREATED).body(
-                userService.save(userModel)
-        );
+    public ResponseEntity<Object> saveUser(@RequestBody @Valid UserRecordDto userRecordDto){
+        log.info("###################");
+        log.info("Iniciando cadastro");
+        log.debug("Entrando no controller de cadastro");
+        try {
+            log.info("Chamando serviço de salvar usuário!");
+            return ResponseEntity.status(HttpStatus.CREATED).body(
+                    userService.save(userRecordDto)
+            );
+        }
+        catch (Exception e) {
+            log.error("Ocorreu um erro durante o cadastro: {}", e.getMessage());
+            log.info("###################");
+            return ResponseEntity.internalServerError().body(e.getMessage());
+        }
     }
 }
