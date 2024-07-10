@@ -1,9 +1,7 @@
 package com.ms.user.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -21,4 +19,6 @@ public class UserModel implements Serializable {
     private UUID userId;
     private String name;
     private String email;
+    @Column(name = "cd_cpf", nullable = false)
+    private String cdCpf;
 }
