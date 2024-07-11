@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{ISO8601}{GMT+0} %-5level %logger{36} - %msg%n"/>
+        </Console>
+        <File name="File" fileName="D:/Servidor Simulado/ms/ms_user/ms_user.logs">
+
+            <PatternLayout>
+                <Pattern>%d{ISO8601}{GMT+0} %-5level %logger{36} - %msg%n</Pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="Console"/>
+        </Root>
+        <Logger name="com.ms.user.services" level ="DEBUG">
+            <AppenderRef ref="File"/>
+        </Logger>
+        <Logger name="com.ms.user.controllers" level ="DEBUG">
+            <AppenderRef ref="File"/>
+        </Logger>
+    </Loggers>
+</Configuration>
